@@ -13,7 +13,7 @@ class Bike
 	end
 
 	def fix!
-		@broken = false
+		@broken = false #same as line 4?
 	end
 
 end
