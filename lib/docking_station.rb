@@ -24,9 +24,13 @@ class DockingStation
 		bike_count == @capacity
 	end
 
+	def available_bikes
+		@bikes.reject {|bike| bike.broken?}
+	end
+
+
 end
 
 
 old_street = DockingStation.new(capacity: 200)
-
 p old_street
