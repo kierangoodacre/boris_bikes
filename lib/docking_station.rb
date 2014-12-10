@@ -25,3 +25,8 @@ class DockingStation
 	end
 
 end
+
+
+old_street = DockingStation.new(capacity: 200)
+
+p old_street
