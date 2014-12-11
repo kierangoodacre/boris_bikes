@@ -6,8 +6,8 @@ describe BikeContainer do
 	let(:bike) {Bike.new}
     let(:holder) { ContainerHolder.new }
 
-    def fill_holder(holder)
-		10.times {holder.dock(bike)}
+    def fill_holder(number_of_times, holder)
+		number_of_times.times {holder.dock(bike)}  #defined number of bikes
 	end
 
 
@@ -25,12 +25,12 @@ describe BikeContainer do
 
 	it "should know when it is full" do
 		expect(holder).not_to be_full
-		fill_holder(holder)
+		fill_holder(10, holder)
 		expect(holder).to be_full
 	end
 
 	it "shouldn\'t accept the bike if the holder is full" do
-		fill_holder(holder)
+		fill_holder(10, holder)
 		expect(lambda {holder.dock(bike)}).to raise_error(RuntimeError, "Holder is full") #this should be Holder?
 		
 	end
@@ -42,4 +42,15 @@ describe BikeContainer do
 		holder.dock(broken_bike)
 		expect(holder.available_bikes).to eq([working_bike])
 	end
+
+	it "should know when it is empty" do
+		fill_holder(0, holder)
+		expect(holder).to be_empty
+	end
+
+	it "should return error when no bikes to release" do
+		fill_holder(0,holder)
+		expect(lambda {holder.release(bike)}).to raise_error(RuntimeError, "Holder is empty")
+	end
+
 end
