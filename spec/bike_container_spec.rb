@@ -53,4 +53,13 @@ describe BikeContainer do
 		expect(lambda {holder.release(bike)}).to raise_error(RuntimeError, "Holder is empty")
 	end
 
+	it "should give error message when there is not object" do 
+		fill_holder(10,holder)
+		expect(lambda {holder.release('banana')}).to raise_error(RuntimeError, "banana is not a bike")
+	end
+
+	# it "Should only be able to dock bikes" do
+	# 	expect(lambda {holder.dock('banana')}).to raise_error(RuntimeError, "banana is not a bike")
+	# end
+
 end
