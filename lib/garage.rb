@@ -12,6 +12,7 @@ class Garage
 
 	def accept(bike)
 		bike.fix!
+		dock(bike)
 	end
 
 end

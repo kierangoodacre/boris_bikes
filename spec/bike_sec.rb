@@ -1,2 +1,0 @@
-describe Bike do
-	it 

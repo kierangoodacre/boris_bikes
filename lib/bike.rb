@@ -17,13 +17,3 @@ class Bike
 	end
 
 end
-
-# class confectionary
-
-# 	def initialize
-# 	@name = name
-# end
-
-# 	def to_s
-
-
