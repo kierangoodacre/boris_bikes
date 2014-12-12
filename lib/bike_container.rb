@@ -20,7 +20,7 @@ module BikeContainer
 
   def dock(bike)
     raise "Holder is full" if full?
-    # raise "#{bike} is not a bike" unless bike.instance_of?(Bike)
+    raise "#{bike.class}: not a Bike" unless bike.instance_of?(Bike)
     bikes << bike
   end
 

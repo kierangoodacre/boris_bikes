@@ -66,8 +66,8 @@ describe BikeContainer do
 		expect(holder.broken_bikes).to eq([broken_bike])
 	end
 
-	# it "Should only be able to dock bikes" do
-	# 	expect(lambda {holder.dock('banana')}).to raise_error(RuntimeError, "banana is not a bike")
-	# end
+	it "It should give error message when trying to dock anything other than a bike" do
+		expect(lambda {holder.dock('banana')}).to raise_error(RuntimeError, "String: not a Bike")
+	end
 
 end
