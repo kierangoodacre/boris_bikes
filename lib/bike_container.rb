@@ -24,7 +24,7 @@ module BikeContainer
     bikes << bike
   end
 
-  def release(bike)
+  def release(bike = nil)
     raise "Holder is empty" if empty?
     raise "#{bike} is not a bike" unless bikes.include?(bike)
     bikes.delete(bike)
@@ -40,5 +40,9 @@ module BikeContainer
 
   def available_bikes
     bikes.reject {|bike| bike.broken? }
+  end
+
+  def broken_bikes
+  	bikes.select { |bike| bike.broken? }
   end
 end
