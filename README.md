@@ -26,14 +26,11 @@ Return              |  Bike, Station
 ### Class - Station 
 Responisibilites        |Collaborators
 ------------------------|------------------
-Receive                 |  
-Eject                   |
-Break                   |
-Return
-Rent
-
-
-
+Receive                 |  User, Van
+Eject                   |  Van, Bike, 
+Break                   |  User
+Return                  |  User, Bike
+Rent                    |  User, Bike
 
 
 
@@ -43,14 +40,15 @@ Responisibilites        |Collaborators
 ------------------------|------------------
 Receive                 | Bike, Station, Garage
 Eject                   | Bike, Station, Garage
-Holding                 | Bike
+Holding                 | Bike, Garage
 Move                    | Bike, Station, Garage
+Fix                     | Garage
 
 ### Class - Garage 
 Responisibilites        |Collaborators
 ------------------------|------------------
-...                     |
-...                     |
-
-
-
+Receive                 | Van, Station, Bike
+Eject                   | Van Station, Bike
+Holding                 | Bike, Van
+Move                    | Van
+Fix                     | Van
